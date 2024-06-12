@@ -361,8 +361,6 @@ class Connection {
             
                   console.log('Last update message processed:');
                   for (const _upd of msg.slice(1, -2)) dlog(_upd);
-
-                  console.log('Last update processed:',upd);
                   
                   console.log('/!\\ (' + this.conn_id + ') Resyncing orderbook...');
                   
