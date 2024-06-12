@@ -357,7 +357,8 @@ class Connection {
                   console.log('[E] (' + this.conn_id + ') wrong book, crc32_result (' + crc32_result + ') != update.c (' + update.c + '):');
             
                   dlog(' \n' + this.orderbook.asks.slice(0, 10).reverse().map(([p, q]) => p + '\t' + q).join('\n'),' \n');
-                  dlog(this.orderbook.bids.slice(0, 10).map(([p, q]) => p + '\t' + q).join('\n'),' \n \n');
+                  dlog(this.orderbook.bids.slice(0, 10).map(([p, q]) => p + '\t' + q).join('\n'),' \n');
+                  dlog(this.orderbook.timestamp,' \n');
             
                   console.log('Last update message processed:');
                   for (const _upd of msg.slice(1, -2)) dlog(_upd);
