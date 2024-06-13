@@ -131,13 +131,13 @@ function NewUpdateSec (conn, update_time, update_sec) {
       ,
     };
     
-    if (is_test)
+    if (is_test) {
       console.log(obj);
-    else
+    } else {
       seconds_data.push(obj);
+      if (data_time % seconds_to_export == 0) SaveToS3();
+    }
   }
-
-  if (data_time % seconds_to_export == 0) SaveToS3();
 }
 
 async function SaveToS3 () {
